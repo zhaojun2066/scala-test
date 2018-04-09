@@ -14,7 +14,7 @@ class Person {
   var age = 0 // 默认生成 getter and setter 都是public的 age()  age_=(v:Int)
   private var gender = 1  // private生成 getter and setter 都是private的
 
-  val fly = false //val 放入变量 只有getter方法被生成，生成的java的代码是私有的final 和 getter 方法
+  val fly = false //val 放入变量 只有getter方法被生成，生成的java的代码是私有的final 和 public getter 方法
 
   private [this] var score = 90 //只能被当前对象访问，对象私有
 
