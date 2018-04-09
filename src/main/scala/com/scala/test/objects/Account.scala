@@ -1,4 +1,4 @@
-package com.scala.test.clazz
+package com.scala.test.objects
 
 /**
   * Created by jufeng on 2018/4/9.
