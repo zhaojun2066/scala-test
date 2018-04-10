@@ -3,9 +3,9 @@ package com.scala.test.objects
 /**
   * Created by jufeng on 2018/4/9.
   */
-class Account(val id:Int,initalBalance : Double) {
+class Account( id:Int,initalBalance : Double) {
   //val id = Account.newUniqueNumber()
-  private var balance = initalBalance
+   var balance = initalBalance
   def deposit(amout :Double): Unit ={
     balance += amout
   }
