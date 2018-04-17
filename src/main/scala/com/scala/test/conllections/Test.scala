@@ -1,5 +1,6 @@
 package com.scala.test.conllections
 
+import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 
 /**
@@ -78,9 +79,63 @@ object Test {
       * 8我尽量不时候用++: +=: ++=:
       */
 
+    var names = List("ajun","jevin","hurrican")
+    println(names.map(_.toUpperCase).mkString(","))
+
+    println(names.flatMap(ulcase(_)).mkString(" | "))
+
+    //reduceLeft  ((1-7)-2) -9 从左侧到右侧开始组合减法
+    println(List(1,7,2,9).reduceLeft(_ - _))
+
+    //1- (7-(2-9)) 从右侧最后两个元素开始组合做减法
+    println(List(1,7,2,9).reduceRight(_ - _))
+
+    // 0-1-7-2-9
+    println(List(1,7,2,9).foldLeft(0)(_ - _))
+
+    //计算某个字符串中字母出现的频率
+    val freq = scala.collection.mutable.Map[Char,Int]()
+    for(c <- "Mississippi") freq(c) = freq.getOrElse(c,0)+1
+
+    //拉链操作
+    val prices = List(5.0,20,9.09)
+    val skus = List(10,33,34)
+    println(prices.zip(skus).map(p => p._1 * p._2)) // [(),(),()] 得到List[元组]
+    println(prices.zip(skus).map(p => p._1 * p._2)sum) // [(),(),()] 得到List[元组]
+
+
+    //视图懒计算，可以重新计算
+    val powers = (0 until 1000).view.map(math.pow(10,_)) // .force强制计算
+    println(powers(1))
+    println(powers(1))
+
+    //java scala 集合互操作
+    //javaConversions
+
+    // 引入这个，下面才可以转换 import scala.collection.JavaConversions.mapAsScalaMap
+    import scala.collection.JavaConversions.mapAsScalaMap
+    val cc: scala.collection.mutable.Map[String,Int] = new java.util.HashMap[String,Int]()
+
+    //线程安全的集合
+    //scala 提供了六种特质，你可以将他们混入
+    //SynchronizedBuffer SynchronizedMap SynchronizedPriorityQueue SynchronizedQueue SynchronizedSet SynchronizedStack
+    val scores = new mutable.HashMap[String,Int]() with mutable.SynchronizedMap[String,Int]
+    //最好还是使用java.util.concurrent ，比如 ConcurrentHashMap，你可以将java.util.concurrent 中集合转换为scala集合来使用
+
+    //大型集合的并行
+    // coll.par.sum ,par方法产出当前集合的一个并行实现
+    val ccc = ArrayBuffer(23,22,44,66)
+    println(ccc.par.count(_ % 2 ==0))
+    //并行 for,s输出顺序是无法预知的
+    for(i <- (0 to 50).par) print(i +  " ")
+
+    println()
+
 
 
   }
+
+  def ulcase(s:String) = Vector(s.toUpperCase(),s.toLowerCase())
 
   //递归求和，因为list.tail 仍然是一个集合
   def sum(list: List[Int]):Int = {
