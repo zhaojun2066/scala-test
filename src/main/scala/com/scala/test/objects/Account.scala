@@ -12,7 +12,9 @@ class Account( id:Int,initalBalance : Double) {
   def  currentBalance = balance
 }
 
-object Account{ //伴生对象 ，相当于定义静态方法
+object Account{
+
+  //伴生对象 ，相当于定义静态方法
 
   def apply(initalBalance: Double ): Account = new Account(
    newUniqueNumber(),initalBalance
