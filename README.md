@@ -1,7 +1,7 @@
 ##scala-test
 
-Stream
-Views
+Stream 
+Views 
 
-
+case 中置表示法 
 
