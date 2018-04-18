@@ -8,7 +8,5 @@ package com.scala.test.traits
   * 但是如果子类已经继承了其他类，如果是Exception的子类是可以的，如果是不相关的类，是不可以的
   */
 trait LogException  extends Exception with Logger{
-
-
   override def log(msg: String): Unit = println(msg)
 }
