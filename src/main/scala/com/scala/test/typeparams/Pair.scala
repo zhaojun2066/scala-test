@@ -30,7 +30,7 @@ class Pairss[T <% Ordered[T]] (val f:T ,val s:T){
   def smaller = if (f>s) f else s
 }
 
-//型变,+T 意味着 Student 是Person的子类 所以PPP[Student]也是 PPP[Person]的子类型了
+//协变,+T 意味着 Student 是Person的子类 所以PPP[Student]也是 PPP[Person]的子类型了
 // mkFriends(p: PPP[Person]) 也就可以接受PPP[Student] 参数了，否则二者是没有关系的
 class  Person
 class Student extends Person
@@ -38,6 +38,10 @@ class PPP[+T](val f: T ,s:T){
   def  mkFriends(p: PPP[Person])={
     println(p.f)
   }
+
+  //通配符
+  def mk(p:PPP[_ <:Person]){}
+
 }
 
 

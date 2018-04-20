@@ -2,7 +2,7 @@ package com.scala.test.caseclazz
 
 /**
   * Created by jufeng on 2018/4/18.
-  * case 样例类 必须带有参数，会自动生成apply 和unapply方，切参数默认是都是val
+  * case 样例类 必须带有参数，会自动生成apply 和unapply方，切参数默认是都是val, 并且通过值做比较
   *
   * ​sealed关键字可以修饰类和特质（特质）。密封类提供了一种约束：不能在类定义的文件之外定义任何新的子类
   *

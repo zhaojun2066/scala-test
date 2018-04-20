@@ -26,7 +26,19 @@ object Test {
       println(num);println(item)
     }
 
+    println(regexPwd("dsd89xx"))
 
+
+
+
+  }
+
+  def regexPwd(x:String): String =  {
+    val numberPattern = "[0-9]+".r
+    numberPattern.findFirstMatchIn(x) match {
+      case Some(_) => "Pwd ok"
+      case None => "pwd not ok"
+    }
   }
 
 }

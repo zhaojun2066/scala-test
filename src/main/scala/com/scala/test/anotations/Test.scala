@@ -35,7 +35,7 @@ class Test extends  Serializable{
   //@varargs注解让你可以从Java调用scala的带有变长参数的方法
   def process(args: String*){}
   //scala编译器会变成序列
-  def process(args: Seq[String]){}
+  def process2(args: Seq[String]){}
 
   @varargs def process1(args: String*){}
   //加上这个注解会生成如下Java方法：
@@ -44,7 +44,7 @@ class Test extends  Serializable{
 
   //生成JavaBean风格的getter 和setter
   @BeanProperty var name:String = _
-  @BooleanBeanProperty val flag:Boolean = _ //生成带有is前缀的getter方法
+  @BooleanBeanProperty val flag:Boolean = false //生成带有is前缀的getter方法
 
 
 
