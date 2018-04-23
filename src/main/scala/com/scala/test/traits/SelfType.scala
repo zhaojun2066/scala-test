@@ -27,8 +27,19 @@ trait Childs extends SelfType{
 
 class Childss extends SelfType{
   this: IndexOutOfBoundsException =>
-  override def log(msg: String): Unit = {}
+  override def log(msg: String): Unit = {
+    println("chi")
+  }
 }
 class Child extends IndexOutOfBoundsException with SelfType{
-  override def log(msg: String): Unit = {}
+   def log(msg: String): Unit = {
+     println("child")
+   }
+}
+
+object SelfType{
+  def main(args: Array[String]): Unit = {
+    val c = new Child
+    c.log("--")
+  }
 }

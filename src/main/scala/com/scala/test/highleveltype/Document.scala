@@ -74,7 +74,7 @@ trait Reader{
 }
 class StringReader extends Reader{
   override type Contents = String
-  override def read(file: String): String = {
+  override def read(file: String): Contents = {
     Source.fromFile(file,"utf-8").mkString
   }
 }
