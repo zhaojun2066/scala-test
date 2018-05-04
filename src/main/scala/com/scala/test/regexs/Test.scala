@@ -26,7 +26,7 @@ object Test {
       println(num);println(item)
     }
 
-    println(regexPwd("dsd89xx"))
+    println(regexPwd("9999"))
 
 
 

@@ -131,6 +131,17 @@ object Test {
 
     println()
 
+    var m= Map[String,String]()
+    m += ("a"-> "b")
+    println("m-> " + m("a"))
+    val list = List(3,5,2,10,6)
+    println(list.sortBy(e => (e)).takeRight(6))
+
+    val alist = List(A(5,3),A(2,3),A(2,4))
+    alist.sortBy(w => (w.score,w.weight))(Ordering.Tuple2(Ordering.Double.reverse, Ordering.Double.reverse) )
+      .foreach(println(_))
+
+
 
 
   }
@@ -150,3 +161,5 @@ object Test {
 
 
 }
+
+case class A(score: Double,weight: Double)

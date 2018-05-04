@@ -15,4 +15,8 @@ object c{
     case Yellow => "care"
     case Green => "go"
   }
+
+  def main(args: Array[String]): Unit = {
+    println(Red)
+  }
 }
