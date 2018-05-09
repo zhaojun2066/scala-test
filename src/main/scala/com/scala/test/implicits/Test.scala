@@ -15,20 +15,20 @@ package com.scala.test.implicits
   再运行，没报错
   scala> val i: Int = 3.5  //i=3
   */
-class Test {
 
-}
 
 class SwingType{
-  def  wantLearned(sw : String) = println("兔子已经学会了"+sw)
+  def  wantLearned(sw : String) = println("兔子已经学会了 "+sw)
 }
 object swimming{
   implicit def getType(s : AminalType) = new SwingType
 }
 class AminalType
 
-object AminalType extends  App{
-  import  swimming._
-  val rabbit = new AminalType
-  rabbit.wantLearned("breaststroke")         //蛙泳
+object Test {
+  def main(args: Array[String]): Unit = {
+    import  swimming._
+    val rabbit = new AminalType
+    rabbit.wantLearned("breaststroke")         //蛙泳
+  }
 }
