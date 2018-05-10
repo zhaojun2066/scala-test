@@ -100,5 +100,26 @@ object Test {
       println(x)
     }
 
+    delayed(time)
+
+    println(getUser(address,"jufeng",25))
+
+  }
+
+  def time() = {
+    println("get Time")
+    System.nanoTime
+  }
+
+  def delayed( t: Long) ={
+    println("t => " +t)
+  }
+
+  def address(name: String,age: Int)={
+    name +" : " +age + " on langfang"
+  }
+
+  def getUser(f: (String,Int) => String,name: String,age: Int) = {
+      f(name,age)
   }
 }

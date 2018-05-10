@@ -8,7 +8,12 @@ import scala.collection.JavaConversions.mapAsScalaMap
 /**
   * Created by jufeng on 2018/4/8.
   */
+
+/*class Test[T]{
+  def apply(i: Int): T = throw new Error()
+}*/
 object Test {
+
 
 
   def test1()={
@@ -16,11 +21,15 @@ object Test {
     //定长数组
     val nums = new  Array[Int](10) //初始化所有的数组都是0
     for (a <- nums) println(a)
-
-    val a = new Array[String](10)//初始化为null
+    println("---------------------")
+    val a =  Array[Int](10)
+    for (a1 <- a) println(a1)
+    println("---------------------")
     val b =  Array("hello","world")//长度为2 且类型是推断出来的
     val c = b(0)//访问元素 (index)
-
+    println(c)
+    b(0) = "hHHHH"  // b.update(0,”hHHHH”)
+    println(b(0))
     // Int Double 其他数字都对应java的基本类型的数组
 
 
@@ -73,6 +82,8 @@ object Test {
 
     //取值
     val bobScore = scores("Bob")
+
+    println("Bob "+bobScore)
 
     scores.contains("Bob") //检查key 是否存在
     var bobS = scores.getOrElse("Bob",0) // if (scores.contains("Bob")) scores("bob") else 0
@@ -141,6 +152,14 @@ object Test {
 
   def main(args: Array[String]): Unit = {
     test1()
+    println()
+    println("Hello,\nWorld!")
+    val foo = """菜鸟教程
+              www.runoob.com
+              www.w3cschool.cc
+              www.runnoob.com
+              以上三个地址都能访问"""
+    println(foo)
   }
 
 }
