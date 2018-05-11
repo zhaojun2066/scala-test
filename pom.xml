@@ -6,6 +6,7 @@
   <inceptionYear>2008</inceptionYear>
   <properties>
     <scala.version>2.11.7</scala.version>
+    <akka.version>2.3.6</akka.version>
   </properties>
 
   <repositories>
@@ -41,6 +42,11 @@
       <artifactId>specs</artifactId>
       <version>1.2.5</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.typesafe.akka</groupId>
+      <artifactId>akka-actor_2.11</artifactId>
+      <version>${akka.version}</version>
     </dependency>
   </dependencies>
 

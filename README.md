@@ -100,3 +100,6 @@ case 中置表示法
 ### case class
     case 样例类 必须带有参数，会自动生成apply 和unapply方，且参数默认是都是val, 并且通过值做比较
     case 是不可变的，但可以通过copy 拷贝和修改对象
+    
+###   PartialFunction
+  

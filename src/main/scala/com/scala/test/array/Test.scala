@@ -5,16 +5,12 @@ import java.util
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer
 import scala.collection.JavaConversions.mapAsScalaMap
+
 /**
   * Created by jufeng on 2018/4/8.
   */
 
-/*class Test[T]{
-  def apply(i: Int): T = throw new Error()
-}*/
 object Test {
-
-
 
   def test1()={
 

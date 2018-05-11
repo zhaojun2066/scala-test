@@ -5,7 +5,7 @@ package com.scala.test.typeparams
   * 泛型类
   */
 class Stack[A] {
-  private var elements: List[A] = Nil
+  private var elements = List[A]()
   def push(x: A) =elements = x :: elements
   def peek: A = elements.head
   def pop: A = {
